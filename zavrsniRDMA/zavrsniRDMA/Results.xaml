@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zavrsniRDMA.Results">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame>              
+                <StackLayout>
+                    <Label Text="Filter users with scores between..."></Label>
+                    <Entry x:name="from" Keyboard="Numeric" Placeholder="from"></Entry>
+                    <Entry x:name="from" Keyboard="Numeric" Placeholder="to"></Entry>
+                    <Button Text="filter" x:Name="FilterBtn" Clicked="FilterBtn_Clicked"></Button>
+                </StackLayout>                
+            </Frame>
+            <Frame>
+                <Label Text="All Results" FontSize="Title"></Label>
+            </Frame>
+
+            <Grid HeightRequest="70" Margin="20, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Button FontSize="Micro" Grid.Column="0" Grid.Row="0"  Text="id" Clicked="SortId"/>
+                <Button FontSize="Micro" Grid.Column="1" Grid.Row="0"  Text="test id" Clicked="SortTestId"/>
+                <Button FontSize="Micro" Grid.Column="2" Grid.Row="0"  Text="skill" Clicked="SortSkill"/>
+                <Button Grid.Column="3" Grid.Row="0"  Text="%" Clicked="SortPercent"/>
+                <Button FontSize="Micro" Grid.Column="4" Grid.Row="0"  Text="score" Clicked="SortScore"/>
+                <Button FontSize="Micro" Grid.Column="5" Grid.Row="0"  Text="max" Clicked="SortMax"/>
+
+            </Grid>
+            <Frame Padding="0" Margin="10, 0, 10, 10">
+                <ListView x:Name="results" RowHeight="80" Margin="20">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid VerticalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" Text="{Binding id_user}"/>
+                                    <Label HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Text="{Binding id_exercise}"/>
+                                    <Label HorizontalOptions="Center" Grid.Column="2" Grid.Row="0" Text="{Binding skill}"/>
+                                    <Label HorizontalOptions="Center" Grid.Column="3" Grid.Row="0" Text="{Binding result_percent}"/>
+                                    <Label HorizontalOptions="Center" Grid.Column="4" Grid.Row="0" Text="{Binding result_score}"/>
+                                    <Label HorizontalOptions="Center" Grid.Column="5" Grid.Row="0" Text="{Binding result_max}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

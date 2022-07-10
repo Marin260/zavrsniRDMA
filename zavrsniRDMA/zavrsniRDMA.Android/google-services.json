@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "612276225294",
+    "project_id": "xamarinrdma",
+    "storage_bucket": "xamarinrdma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612276225294:android:54e22d24f1e58a0267435f",
+        "android_client_info": {
+          "package_name": "com.companyname.zavrsnirdma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612276225294-hsteho176enud9tbjc9c9cs3g2ius93a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFSizHDtXcf4tbpla_74HJx9HzncGRP9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612276225294-hsteho176enud9tbjc9c9cs3g2ius93a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
