@@ -7,13 +7,26 @@
             <Frame>              
                 <StackLayout>
                     <Label Text="Filter users with scores between..."></Label>
-                    <Entry x:name="from" Keyboard="Numeric" Placeholder="from"></Entry>
-                    <Entry x:name="from" Keyboard="Numeric" Placeholder="to"></Entry>
-                    <Button Text="filter" x:Name="FilterBtn" Clicked="FilterBtn_Clicked"></Button>
+                    <Grid Padding="0, 0, 0, 40">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <StackLayout Grid.Column="0" Grid.Row="0">
+                            <Entry x:Name="From" Keyboard="Numeric" Placeholder="from"></Entry>
+                            <Entry x:Name="To" Keyboard="Numeric" Placeholder="to"></Entry>                        
+                        </StackLayout>
+                        <Button VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="1" Grid.Row="0" Text="filter" x:Name="FilterBtn" Clicked="FilterBtn_Clicked"></Button>
+                    </Grid>
+                    
                 </StackLayout>                
             </Frame>
             <Frame>
-                <Label Text="All Results" FontSize="Title"></Label>
+                <Label Text="All Results" FontSize="Default"></Label>
             </Frame>
 
             <Grid HeightRequest="70" Margin="20, 10">

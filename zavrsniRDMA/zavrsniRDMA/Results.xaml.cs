@@ -147,9 +147,22 @@ namespace zavrsniRDMA
             results.ItemsSource = sortedList;
         }
 
-        private void FilterBtn_Clicked(object sender, EventArgs e)
+        private async void FilterBtn_Clicked(object sender, EventArgs e)
         {
+            List<ResultsModel> filteredList = new List<ResultsModel>();
 
+            var fromValue = From.Text;
+            var toValue = To.Text;
+
+            if (fromValue == null) fromValue = "0";
+            if (toValue == null) toValue = "100";
+
+            float fV = float.Parse(fromValue);
+            float tV = float.Parse(toValue);
+
+            filteredList = modelList.Where(o => float.Parse(o.result_percent) >= fV && float.Parse(o.result_percent) <= tV).ToList();
+            results.ItemsSource = null;
+            results.ItemsSource = filteredList;
         }
     }
 }
